@@ -132,9 +132,11 @@ function Home() {
             <a href="#solutions" className="hover:text-white transition-all hover:scale-105 transform inline-block">Solutions</a>
             <a href="#blogs" className="hover:text-white transition-all hover:scale-105 transform inline-block">Blogs</a>
             <a href="#contact" className="hover:text-white transition-all hover:scale-105 transform inline-block">Contact</a>
-            <Link to="/login" className="hover:text-white transition-all hover:scale-105 transform inline-block text-cyan-500/70 hover:text-cyan-400 font-bold">Command Center</Link>
           </div>
           <div className="flex gap-4 items-center">
+            <Link to="/login" className="hidden lg:flex items-center gap-2 text-white hover:text-cyan-400 transition-all hover:scale-105 transform font-bold bg-slate-900/50 px-4 py-2 rounded-lg border border-cyan-500/20">
+              <Terminal size={16} /> Command Center
+            </Link>
             <button className="lg:hidden text-white p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -151,7 +153,9 @@ function Home() {
             <a href="#solutions" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-white transition-colors">Solutions</a>
             <a href="#blogs" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-white transition-colors">Blogs</a>
             <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-white transition-colors">Contact</a>
-            <Link to="/login" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-white transition-colors text-cyan-500/70">Command Center</Link>
+            <Link to="/login" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 text-white hover:text-cyan-400 transition-colors bg-slate-900/50 p-4 rounded-lg border border-cyan-500/20 mt-4 font-bold">
+              <Terminal size={20} /> Command Center
+            </Link>
           </div>
         </div>
       )}
