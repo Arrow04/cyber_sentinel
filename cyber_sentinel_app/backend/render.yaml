@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: cyber-sentinel-api
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 3001
+      - key: DATABASE_URL
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_PORT
+        value: 587
+      - key: EMAIL_FROM
+        sync: false
+      - key: EMAIL_TO
+        sync: false

@@ -1,0 +1,19 @@
+import React from 'react';
+
+const Logo = ({ className = "" }) => (
+  <svg 
+    className={className} 
+    viewBox="0 0 100 100" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path 
+      fillRule="evenodd" 
+      clipRule="evenodd" 
+      d="M50 10 L15 25 V55 C15 78 35 92 50 98 C65 92 85 78 85 55 V25 L50 10 Z M60 28 L35 52 H55 L40 76 L65 52 H45 L60 28 Z" 
+      fill="#06B6D4"
+    />
+  </svg>
+);
+
+export default Logo;
