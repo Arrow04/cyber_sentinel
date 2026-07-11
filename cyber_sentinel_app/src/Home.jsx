@@ -121,7 +121,7 @@ function Home() {
         initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="fixed w-full top-0 z-50 bg-[#030712]/90 backdrop-blur-2xl border-b border-white/5"
       >
-        <div className="max-w-[92%] mx-auto px-4 lg:px-8 h-20 flex items-center justify-between">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Logo className="w-9 h-9 drop-shadow-[0_0_10px_rgba(6,182,212,0.3)]" />
             <span className="font-bold text-xl tracking-tight text-white">Cyber Sentinel</span>
@@ -162,7 +162,7 @@ function Home() {
 
       {/* Conditional Rendering: Blog Reader vs Main Site */}
       <CyberGlobe />
-      <main className="pt-20 pb-24 px-4 lg:px-8 max-w-[92%] mx-auto space-y-24 relative z-10">
+      <main className="pt-20 pb-24 px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto space-y-24 relative z-10">
         
         {/* Hero Section */}
         <motion.section 
@@ -177,7 +177,7 @@ function Home() {
             </div>
           </motion.div>
           
-          <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold mb-8 text-white tracking-tight leading-[1.1]">
+          <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-7xl font-bold mb-8 text-white tracking-tight leading-[1.1]">
             Empower the Enterprise. <br className="hidden md:block"/>
             Protect the Internet.
           </motion.h1>
@@ -203,8 +203,8 @@ function Home() {
           id="about" className="scroll-mt-32"
           initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={staggerContainer}
         >
-          <div className="bg-[#0b1120] border border-slate-800 rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 lg:p-24 relative overflow-hidden shadow-2xl shadow-black/50">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="bg-[#0b1120] border border-slate-800 rounded-3xl md:rounded-[3rem] p-6 sm:p-10 lg:p-24 relative overflow-hidden shadow-2xl shadow-black/50">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
                <motion.div variants={fadeInUp}>
                  <div className="inline-flex text-cyan-400 font-semibold text-sm mb-4 tracking-widest uppercase">The Founder's Story</div>
                  <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight">Our Vision & Mission</h2>
@@ -261,10 +261,9 @@ function Home() {
              <motion.p variants={fadeInUp} className="text-lg text-slate-400 max-w-3xl mx-auto font-light leading-relaxed">We replaced fragmented, siloed departments with a unified nervous system. Our ERP gives you total command over your operations, from the warehouse floor to the executive boardroom.</motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Business Ops */}
-            <motion.div variants={fadeInUp} className="bg-[#0b1120] border border-slate-800 rounded-[2rem] p-10 transition-all duration-300 shadow-xl group hover:border-slate-700">
-              <div className="text-slate-500 mb-8 bg-slate-900 w-16 h-16 rounded-2xl flex items-center justify-center border border-slate-800 group-hover:text-blue-400 group-hover:border-blue-500/30 transition-all">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <motion.div variants={fadeInUp} className="bg-[#0b1120] border border-slate-800 rounded-2xl md:rounded-[2rem] p-6 md:p-8 text-center hover:border-slate-700 transition-colors shadow-xl group">
+              <div className="text-slate-500 mb-6 md:mb-8 bg-slate-900 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center border border-slate-800 group-hover:text-blue-400 group-hover:border-blue-500/30 transition-all">
                 <Briefcase size={28}/>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Business Operations</h3>
@@ -277,8 +276,8 @@ function Home() {
             </motion.div>
 
             {/* Supply Chain */}
-            <motion.div variants={fadeInUp} className="bg-[#0b1120] border border-slate-800 rounded-[2rem] p-10 transition-all duration-300 shadow-xl group hover:border-slate-700">
-              <div className="text-slate-500 mb-8 bg-slate-900 w-16 h-16 rounded-2xl flex items-center justify-center border border-slate-800 group-hover:text-emerald-400 group-hover:border-emerald-500/30 transition-all">
+            <motion.div variants={fadeInUp} className="bg-[#0b1120] border border-slate-800 rounded-3xl p-6 md:p-10 transition-all duration-300 shadow-xl group hover:border-slate-700">
+              <div className="text-slate-500 mb-6 md:mb-8 bg-slate-900 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center border border-slate-800 group-hover:text-emerald-400 group-hover:border-emerald-500/30 transition-all">
                 <Database size={28}/>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Supply Chain & Inventory</h3>
@@ -291,8 +290,8 @@ function Home() {
             </motion.div>
 
             {/* Finance */}
-            <motion.div variants={fadeInUp} className="bg-[#0b1120] border border-slate-800 rounded-[2rem] p-10 transition-all duration-300 shadow-xl group hover:border-slate-700">
-              <div className="text-slate-500 mb-8 bg-slate-900 w-16 h-16 rounded-2xl flex items-center justify-center border border-slate-800 group-hover:text-yellow-400 group-hover:border-yellow-500/30 transition-all">
+            <motion.div variants={fadeInUp} className="bg-[#0b1120] border border-slate-800 rounded-3xl p-6 md:p-10 transition-all duration-300 shadow-xl group hover:border-slate-700">
+              <div className="text-slate-500 mb-6 md:mb-8 bg-slate-900 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center border border-slate-800 group-hover:text-yellow-400 group-hover:border-yellow-500/30 transition-all">
                 <Calculator size={28}/>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Finance & Accounting</h3>
@@ -305,8 +304,8 @@ function Home() {
             </motion.div>
 
             {/* Workforce */}
-            <motion.div variants={fadeInUp} className="bg-[#0b1120] border border-slate-800 rounded-[2rem] p-10 transition-all duration-300 shadow-xl group hover:border-slate-700">
-              <div className="text-slate-500 mb-8 bg-slate-900 w-16 h-16 rounded-2xl flex items-center justify-center border border-slate-800 group-hover:text-purple-400 group-hover:border-purple-500/30 transition-all">
+            <motion.div variants={fadeInUp} className="bg-[#0b1120] border border-slate-800 rounded-3xl p-6 md:p-10 transition-all duration-300 shadow-xl group hover:border-slate-700">
+              <div className="text-slate-500 mb-6 md:mb-8 bg-slate-900 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center border border-slate-800 group-hover:text-purple-400 group-hover:border-purple-500/30 transition-all">
                 <Users size={28}/>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Workforce Management</h3>
@@ -363,7 +362,7 @@ function Home() {
               </motion.div>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="bg-[#050b14] rounded-3xl p-10 overflow-hidden relative border border-slate-800 shadow-2xl group">
+            <motion.div variants={fadeInUp} className="bg-[#050b14] rounded-3xl p-6 md:p-10 overflow-hidden relative border border-slate-800 shadow-2xl group">
               <div className="relative z-10 flex flex-col h-full">
                 <div className="mb-10">
                   <h3 className="text-3xl font-bold text-white mb-3">Live Threat Intelligence</h3>
