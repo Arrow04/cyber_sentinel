@@ -771,7 +771,7 @@ function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {blogPosts.length === 0 ? (
-              <div className="col-span-full py-12 text-center text-slate-500">No blogs published yet. Use the Admin Portal to create one.</div>
+              <div className="col-span-full py-12 text-center text-slate-500">No blogs published yet!</div>
             ) : blogPosts.map((post) => (
               <Link 
                 to={`/blog/${post.slug}`}

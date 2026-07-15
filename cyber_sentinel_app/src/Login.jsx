@@ -123,14 +123,8 @@ export default function Login() {
             </button>
           </form>
 
-          <div className="mt-6 text-center">
-            <button 
-              type="button" 
-              onClick={() => {setIsLogin(!isLogin); setError('');}}
-              className="text-sm text-slate-400 hover:text-white transition-colors"
-            >
-              {isLogin ? "Need access? Register here." : "Already an operator? Login here."}
-            </button>
+          <div className="mt-6 text-center text-sm text-slate-500">
+            Secure Enterprise Portal
           </div>
         </div>
       </main>
