@@ -6,7 +6,7 @@ import Logo from './Logo';
 const documents = {
   'privacy': {
     title: 'Privacy Policy',
-    lastUpdated: 'August 15, 2026',
+    lastUpdated: 'July 4, 2026',
     content: (
       <>
         <p>At Cyber Sentinel, we take your privacy and data security incredibly seriously. This Privacy Policy details how we collect, process, and protect your information when you use our zero-trust platform.</p>
@@ -29,7 +29,7 @@ const documents = {
   },
   'terms': {
     title: 'Terms of Service',
-    lastUpdated: 'September 1, 2026',
+    lastUpdated: 'July 4, 2026',
     content: (
       <>
         <p>These Terms of Service govern your use of the Cyber Sentinel enterprise platform and associated services.</p>
@@ -44,7 +44,7 @@ const documents = {
   },
   'cookies': {
     title: 'Cookie Policy',
-    lastUpdated: 'July 10, 2026',
+    lastUpdated: 'July 4, 2026',
     content: (
       <>
         <p>We use essential cookies to ensure the secure operation of our zero-trust authentication layer. We do not use third-party tracking cookies.</p>
@@ -59,7 +59,7 @@ const documents = {
   },
   'security': {
     title: 'Security Whitepaper',
-    lastUpdated: 'October 5, 2026',
+    lastUpdated: 'July 4, 2026',
     content: (
       <>
         <div className="bg-slate-900 border border-slate-700 p-6 rounded-xl flex flex-col items-center justify-center text-center py-16">
@@ -75,7 +75,7 @@ const documents = {
   },
   'soc2': {
     title: 'SOC2 Compliance Status',
-    lastUpdated: 'January 1, 2026',
+    lastUpdated: 'July 4, 2026',
     content: (
       <>
         <div className="bg-slate-900 border border-slate-700 p-6 rounded-xl flex flex-col items-center justify-center text-center py-16">
