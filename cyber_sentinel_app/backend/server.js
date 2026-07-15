@@ -348,6 +348,86 @@ app.post('/api/admin/blogs', verifyToken, async (req, res) => {
   }
 });
 
+// --- Admin CRUD Routes ---
+
+// Delete a blog
+app.delete('/api/admin/blogs/:id', verifyToken, async (req, res) => {
+  if (!process.env.DATABASE_URL) return res.status(501).json({ error: 'DB not configured' });
+  try {
+    await pool.query('DELETE FROM blogs WHERE id = $1', [req.params.id]);
+    res.json({ message: 'Blog deleted successfully' });
+  } catch (error) {
+    console.error("Delete blog error:", error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Update a blog
+app.put('/api/admin/blogs/:id', verifyToken, async (req, res) => {
+  if (!process.env.DATABASE_URL) return res.status(501).json({ error: 'DB not configured' });
+  const { title, slug, excerpt, content } = req.body;
+  try {
+    await pool.query(
+      'UPDATE blogs SET title = $1, slug = $2, excerpt = $3, content = $4 WHERE id = $5',
+      [title, slug, excerpt, content, req.params.id]
+    );
+    res.json({ message: 'Blog updated successfully' });
+  } catch (error) {
+    if (error.code === '23505') return res.status(409).json({ error: 'Slug already exists' });
+    console.error("Update blog error:", error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Delete a subscriber
+app.delete('/api/admin/subscribers/:id', verifyToken, async (req, res) => {
+  if (!process.env.DATABASE_URL) return res.status(501).json({ error: 'DB not configured' });
+  try {
+    await pool.query('DELETE FROM subscribers WHERE id = $1', [req.params.id]);
+    res.json({ message: 'Subscriber deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Update a subscriber
+app.put('/api/admin/subscribers/:id', verifyToken, async (req, res) => {
+  if (!process.env.DATABASE_URL) return res.status(501).json({ error: 'DB not configured' });
+  try {
+    await pool.query('UPDATE subscribers SET email = $1 WHERE id = $2', [req.body.email, req.params.id]);
+    res.json({ message: 'Subscriber updated successfully' });
+  } catch (error) {
+    if (error.code === '23505') return res.status(409).json({ error: 'Email already exists' });
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Delete a lead
+app.delete('/api/admin/leads/:id', verifyToken, async (req, res) => {
+  if (!process.env.DATABASE_URL) return res.status(501).json({ error: 'DB not configured' });
+  try {
+    await pool.query('DELETE FROM messages WHERE id = $1', [req.params.id]);
+    res.json({ message: 'Lead deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Update a lead
+app.put('/api/admin/leads/:id', verifyToken, async (req, res) => {
+  if (!process.env.DATABASE_URL) return res.status(501).json({ error: 'DB not configured' });
+  const { name, email, message } = req.body;
+  try {
+    await pool.query(
+      'UPDATE messages SET name = $1, email = $2, message = $3 WHERE id = $4',
+      [name, email, message, req.params.id]
+    );
+    res.json({ message: 'Lead updated successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 // Health check
 app.get('/api/health', async (req, res) => {
   let dbStatus = "disconnected";
