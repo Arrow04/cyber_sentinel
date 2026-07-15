@@ -262,7 +262,7 @@ function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            <motion.div variants={fadeInUp} className="bg-[#0b1120] border border-slate-800 rounded-2xl md:rounded-[2rem] p-6 md:p-8 text-center hover:border-slate-700 transition-colors shadow-xl group">
+            <motion.div variants={fadeInUp} className="bg-[#0b1120] border border-slate-800 rounded-3xl p-6 md:p-10 transition-all duration-300 shadow-xl group hover:border-slate-700">
               <div className="text-slate-500 mb-6 md:mb-8 bg-slate-900 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center border border-slate-800 group-hover:text-blue-400 group-hover:border-blue-500/30 transition-all">
                 <Briefcase size={28}/>
               </div>
