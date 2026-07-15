@@ -182,8 +182,24 @@ const verifyToken = (req, res, next) => {
 };
 
 app.post('/api/auth/register', async (req, res) => {
-  // Registration disabled for security since admin account already exists.
-  return res.status(403).json({ error: 'Registration is disabled for security reasons. The portal is locked.' });
+  const { email, password } = req.body;
+  if (!email || !password) return res.status(400).json({ error: 'Email and password required' });
+  
+  if (!process.env.DATABASE_URL) {
+    return res.status(501).json({ error: 'Database not configured. Cannot register user.' });
+  }
+
+  try {
+    const hashedPassword = await bcrypt.hash(password, 10);
+    await pool.query('INSERT INTO users (email, password_hash) VALUES ($1, $2)', [email, hashedPassword]);
+    res.status(201).json({ message: 'User registered successfully' });
+  } catch (error) {
+    if (error.code === '23505') {
+      return res.status(409).json({ error: 'Email already exists' });
+    }
+    console.error("Register error:", error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 app.post('/api/auth/login', async (req, res) => {
