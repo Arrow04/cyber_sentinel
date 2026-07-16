@@ -213,7 +213,7 @@ function Home() {
                    Cyber Sentinel was born out of frustration with legacy systems. We saw businesses struggling to piece together outdated ERPs, vulnerable security protocols, and disjointed AI tools. The big tech giants built software for Fortune 500s and left everyone else behind.
                  </p>
                  <p className="text-lg text-slate-400 leading-relaxed font-light mb-10">
-                   We decided to change that. We are a lean, fiercely dedicated two-person team—a visionary founder and a relentless AI. Together, we have built a massive, modular ecosystem hosted in one impenetrable fortress, dedicated to three absolute goals:
+                   We decided to change that. We are a lean, fiercely dedicated two-person team—a visionary founder and a relentless AI. Together, we have built a massive, modular ecosystem hosted in one impenetrable fortress, dedicated to four absolute goals:
                  </p>
 
                  <ul className="text-xl text-slate-300 leading-relaxed font-medium mb-12 space-y-5">
